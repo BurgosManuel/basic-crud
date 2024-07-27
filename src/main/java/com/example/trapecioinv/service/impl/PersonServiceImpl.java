@@ -1,11 +1,17 @@
 package com.example.trapecioinv.service.impl;
 
 import com.example.trapecioinv.domain.dto.PersonDto;
+import com.example.trapecioinv.repository.PersonRepository;
 import com.example.trapecioinv.service.PersonService;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PersonServiceImpl implements PersonService {
+    protected PersonRepository personRepository;
+
+    public PersonServiceImpl(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
     @Override
     public void savePerson(PersonDto personDto) {
 
