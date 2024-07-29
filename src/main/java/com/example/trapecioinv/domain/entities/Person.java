@@ -1,16 +1,17 @@
 package com.example.trapecioinv.domain.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
+
+@Entity
 @Data
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(unique = true)
+    private String dni;
     private String name;
     private String lastName;
     private String email;

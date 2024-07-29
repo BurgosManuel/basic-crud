@@ -5,6 +5,8 @@ import com.example.trapecioinv.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/person")
 public class PersonController {
@@ -30,5 +32,10 @@ public class PersonController {
     @DeleteMapping("{id}")
     public void deletePerson(@PathVariable Long id) {
         personService.deletePerson(id);
+    }
+
+    @GetMapping
+    public List<PersonDto> findAll() {
+        return personService.findAll();
     }
 }

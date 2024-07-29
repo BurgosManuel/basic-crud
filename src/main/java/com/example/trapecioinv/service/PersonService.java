@@ -9,4 +9,6 @@ public interface PersonService {
     public void updatePerson(PersonDto personDto);
     public void deletePerson(Long id);
     public PersonDto findPerson(Long id);
+
+    List<PersonDto> findAll();
 }
